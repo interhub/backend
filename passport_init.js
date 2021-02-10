@@ -1,10 +1,17 @@
 const passport = require('passport')
 const BasicStrategy = require('passport-http').BasicStrategy;
-console.log('hello')
+
+// passport.serializeUser(function (user, done) {
+//     done(null, user);
+// });
+
+// passport.deserializeUser(function (user, done) {
+//     done(null, user);
+// });
 
 passport.use(new BasicStrategy(
     function (userid, password, done) {
-        console.log(userid, 'userid')
+        console.log(userid, 'userid', password, 'password')
         const err = false
         const user = { name: 'Mike', id: 1, age: 20 }
         if (err) { return done(err); }
